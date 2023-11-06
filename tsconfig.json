@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "isolatedModules": true,
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "outDir": "./dist/",
+    "strict": true,
+    "lib": ["ES2021", "DOM"],
+    "target": "ES6",
+    "useDefineForClassFields": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@package": ["./package.json"],
+    },
+    "plugins": [
+      { "transform": "typescript-transform-paths" }
+    ],
+  },
+  "include": [
+    "src/**/*.ts",
+    "scripts/*.ts"
+  ],
+  "exclude": [
+    "node_modules/*",
+    "**/*-aot.ts"
+  ],
+  "ts-node": {
+    "transpileOnly": true,
+    "require": [ "typescript-transform-paths/register" ]
+  }
+}
